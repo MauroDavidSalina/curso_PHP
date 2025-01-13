@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <p>&nbsp;</p>
+   <form action="prueba_operadores.php" method="post" name="form1">
+    <p>
+        <label for="valor1"></label>
+        <input type="text" name="valor1" id="valor1">
+        <label for="valor2"></label>
+        <input type="text" name="valor2" id="valor2">
+        <label for="operacion"></label>
+        <select name="operacion" id="operacion">
+            <option value="Suma">Suma</option>
+            <option value="Resta">Resta</option>
+            <option value="Multiplicacion">Multiplicacion</option>
+            <option value="Division">Division</option>
+            <option value="Modulo">Modulo</option>
+        </select>
+    </p>
+    <p><input id="button" name="button" onclick='enviar' type="submit" value="enviar"></p>
+   </form>
+</body>
+</html>
