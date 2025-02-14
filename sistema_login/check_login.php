@@ -20,9 +20,16 @@ try {
     $res->execute();
 
     if ($res->rowCount()!=0) {
-        header("location:usuarios_registrados.php");
+        //session_start();
+        //$_SESSION["user"]= $user;
+        $autenticado=true;
+        if(isset($_POST["recordar"])){
+            setcookie("nombre_usuario", $user, time()+86400);
+        }
+        //header("location:usuarios_registrados.php");
     }else{
-        header("Location:login.php");
+        echo "Error. Usuario no registrado.";
+        //header("location:login.php");
     }
 
 } catch (Exception $e) {
