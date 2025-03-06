@@ -9,11 +9,17 @@ class Conexion {
     {
         //aca va la conexion con PDO
         try {
-            $this->conexion = new PDO("mysql:host=" . DB_HOST . "; dbname=" . DB_DATABASE . "; charset=utf8", DB_USER, DB_PASS);
+
+            $conexion= "mysql:host=" . DB_HOST . "; dbname=" . DB_DATABASE . "; charset=" . DB_CHARSET;
+            $this->conexion = new PDO($conexion, DB_USER, DB_PASS);
             $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conexion->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             return $this->conexion;
+
         } catch (Exception $e) {
+
             die("Error: " . $e->getMessage());
+            
         }
     }
 
